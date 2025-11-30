@@ -1,0 +1,27 @@
+{
+  "name": "learnhub",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "db:generate": "turbo run db:generate --filter=@learnhub/database",
+    "db:push": "turbo run db:push --filter=@learnhub/database",
+    "db:migrate": "turbo run db:migrate --filter=@learnhub/database",
+    "db:studio": "turbo run db:studio --filter=@learnhub/database"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.8.2"
+}
